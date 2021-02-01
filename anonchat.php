@@ -8,7 +8,11 @@
                         <div class="textContainer">
                                
                                 <?php
-                                        $serverID = file_get_contents("src/messageHandler/id.txt");
+                                        
+                                        while(TRUE){
+                                                $serverID = file_get_contents("src/messageHandler/id.txt");
+                                                sleep(1);
+                                        }
                                 ?>			
                                 
                                 <script> 
@@ -18,6 +22,7 @@
                                         var x=true;
                                         const task = async () => {
                                                 while(x) {
+                                                        
                                                         var serverId = Number("<?php echo $serverID; ?>");
                                                         await new Promise(r => setTimeout(r, 1000));
                                                         if(clientId!=serverId){
